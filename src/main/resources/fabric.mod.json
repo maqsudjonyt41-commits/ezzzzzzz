@@ -1,20 +1,31 @@
 {
-  "schemaVersion": 1,
-  "id": "uzcheat",
+  "schema_version": 1,
+  "id": "modid",
   "version": "${version}",
-  "name": "UZCHEAT",
-  "description": "Custom 1.21.4 Client",
+  "name": "UzCheat",
+  "description": "Minecraft 1.21.4 Fabric Client",
   "authors": ["Maqsudjon"],
   "contact": {},
   "license": "MIT",
-  "environment": "client",
+  "icon": "assets/modid/icon.png",
+  "environment": "*",
   "entrypoints": {
+    "main": [
+      "com.example.ExampleMod"
+    ],
     "client": [
-      "com.uzcheat.UzCheatClient"
+      "com.example.client.ExampleModClient"
     ]
   },
+  "mixins": [
+    "modid.mixins.json",
+    {
+      "config": "modid.client.mixins.json",
+      "environment": "client"
+    }
+  ],
   "depends": {
-    "fabricloader": ">=0.16.0",
+    "fabricloader": ">=0.16.10",
     "minecraft": "~1.21.4",
     "java": ">=21",
     "fabric-api": "*"
